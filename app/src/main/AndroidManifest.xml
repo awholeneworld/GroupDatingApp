@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="gachon.termproject.jjak">
+    <!-- 카메라, 외부 저장소 접근 권한 -> 나중에 유저에게 허락 요청하는걸로 바꾸기-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Joker">
+        <activity android:name="gachon.termproject.jjak.activity.SeeProfileActivity"></activity>
+        <activity
+            android:name="gachon.termproject.jjak.activity.CommunitySearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gachon.termproject.jjak.activity.SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gachon.termproject.jjak.activity.SplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="gachon.termproject.jjak.activity.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gachon.termproject.jjak.activity.Signup00Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gachon.termproject.jjak.activity.Signup01Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gachon.termproject.jjak.activity.Signup02Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gachon.termproject.jjak.activity.Signup03Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gachon.termproject.jjak.activity.Signup04Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gachon.termproject.jjak.activity.Signup05Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gachon.termproject.jjak.activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gachon.termproject.jjak.activity.WritePostActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait">
+
+            <!-- ^화면 회전 시 상태 및 데이터 초기화 방지^ -->
+        </activity>
+        <activity
+            android:name="gachon.termproject.jjak.activity.SeePostActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gachon.termproject.jjak.activity.ChatActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gachon.termproject.jjak.activity.FindPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gachon.termproject.jjak.activity.SettingMyInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gachon.termproject.jjak.activity.ChangePasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gachon.termproject.jjak.activity.CheckPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gachon.termproject.jjak.activity.SettingBellActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gachon.termproject.jjak.activity.MatchingWriterSeePostActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gachon.termproject.jjak.activity.MatchingSeePostActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gachon.termproject.jjak.activity.MatchingWritePostActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gachon.termproject.jjak.activity.FullScreenImageActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="gachon.termproject.jjak.activity.MatchingSearchActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="gachon.termproject.jjak.activity.SearchPeopleActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="gachon.termproject.jjak.fragment.MatchingSearchFragment"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name="gachon.termproject.jjak.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
