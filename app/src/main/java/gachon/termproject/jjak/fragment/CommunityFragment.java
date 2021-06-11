@@ -49,7 +49,7 @@ public class CommunityFragment extends Fragment {
 
         // 탭 설정
         tabs.addTab(tabs.newTab().setText("자유"));
-        tabs.addTab(tabs.newTab().setText("후기"));
+        tabs.addTab(tabs.newTab().setText("미팅 후기"));
         tabs.addTab(tabs.newTab().setText("미팅 팁"));
         tabs.setTabGravity(tabs.GRAVITY_FILL);
         tabs.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager));

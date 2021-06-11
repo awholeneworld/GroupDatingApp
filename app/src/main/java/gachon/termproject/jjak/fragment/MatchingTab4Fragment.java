@@ -32,7 +32,7 @@ import gachon.termproject.jjak.UserInfo;
 import gachon.termproject.jjak.adapter.MatchingPeopleListAdapter;
 import gachon.termproject.jjak.Content.PeopleListContent;
 
-public class MatchingTabPeopleListFragment extends Fragment {
+public class MatchingTab4Fragment extends Fragment {
     private View view;
     private RecyclerView content;
     private SwipeRefreshLayout refresher;

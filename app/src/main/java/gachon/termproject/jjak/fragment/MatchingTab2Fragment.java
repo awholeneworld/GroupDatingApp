@@ -30,7 +30,7 @@ import gachon.termproject.jjak.R;
 import gachon.termproject.jjak.UserInfo;
 import gachon.termproject.jjak.adapter.MatchingPostAdapter;
 
-public class MatchingTabMeetingFragment extends Fragment {
+public class MatchingTab2Fragment extends Fragment {
     private View view;
     private SwipeRefreshLayout refresher;
     private RecyclerView contents;

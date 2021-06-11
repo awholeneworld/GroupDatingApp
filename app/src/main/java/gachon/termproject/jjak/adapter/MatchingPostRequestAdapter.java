@@ -50,7 +50,7 @@ import gachon.termproject.jjak.UserInfo;
 import gachon.termproject.jjak.activity.ChatActivity;
 import gachon.termproject.jjak.activity.MatchingWriterSeePostActivity;
 import gachon.termproject.jjak.activity.SeeProfileActivity;
-import gachon.termproject.jjak.fragment.MatchingTabProgressFragment;
+import gachon.termproject.jjak.fragment.MatchingTab3Fragment;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
@@ -147,7 +147,7 @@ public class MatchingPostRequestAdapter extends RecyclerView.Adapter<MatchingPos
                                             MatchingWriterSeePostActivity.acceptedView();
                                             MatchingWriterSeePostActivity.requestsView();
                                             if (MatchingPagerAdapter.tab3 != null)
-                                                MatchingTabProgressFragment.databaseReference.addValueEventListener(MatchingTabProgressFragment.postEventListener);
+                                                MatchingTab3Fragment.databaseReference.addValueEventListener(MatchingTab3Fragment.postEventListener);
                                             activity.finish();
                                         }
                                     });

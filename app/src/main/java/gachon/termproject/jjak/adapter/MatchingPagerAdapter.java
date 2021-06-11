@@ -7,10 +7,10 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import org.jetbrains.annotations.NotNull;
 
-import gachon.termproject.jjak.fragment.MatchingTabProgressFragment;
-import gachon.termproject.jjak.fragment.MatchingTabPeopleListFragment;
-import gachon.termproject.jjak.fragment.MatchingTabMeetingFragment;
-import gachon.termproject.jjak.fragment.MatchingTabTeammateFragment;
+import gachon.termproject.jjak.fragment.MatchingTab3Fragment;
+import gachon.termproject.jjak.fragment.MatchingTab4Fragment;
+import gachon.termproject.jjak.fragment.MatchingTab2Fragment;
+import gachon.termproject.jjak.fragment.MatchingTab1Fragment;
 
 public class MatchingPagerAdapter extends FragmentPagerAdapter {
     int mNumOfTabs;
@@ -28,19 +28,19 @@ public class MatchingPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                if (tab1 == null) tab1 = new MatchingTabTeammateFragment();
+                if (tab1 == null) tab1 = new MatchingTab1Fragment();
                 return tab1;
 
             case 1:
-                if (tab2 == null)  tab2 = new MatchingTabMeetingFragment();
+                if (tab2 == null)  tab2 = new MatchingTab2Fragment();
                 return tab2;
 
             case 2:
-                if (tab3 == null)  tab3 = new MatchingTabProgressFragment();
+                if (tab3 == null)  tab3 = new MatchingTab3Fragment();
                 return tab3;
 
             case 3:
-                if (tab4 == null) tab4 = new MatchingTabPeopleListFragment();
+                if (tab4 == null) tab4 = new MatchingTab4Fragment();
                 return tab4;
 
             default:

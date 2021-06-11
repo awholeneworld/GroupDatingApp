@@ -35,7 +35,7 @@ import gachon.termproject.jjak.adapter.MatchingPostAdapter;
 
 import static android.app.Activity.RESULT_OK;
 
-public class MatchingTabTeammateFragment extends Fragment {
+public class MatchingTab1Fragment extends Fragment {
     private View view;
     private SwipeRefreshLayout refresher;
     private RecyclerView contents;

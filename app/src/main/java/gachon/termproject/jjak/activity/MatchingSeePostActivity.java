@@ -52,8 +52,8 @@ import gachon.termproject.jjak.Content.NotificationContent;
 import gachon.termproject.jjak.Content.RequestContent;
 import gachon.termproject.jjak.R;
 import gachon.termproject.jjak.UserInfo;
-import gachon.termproject.jjak.fragment.MatchingTabMeetingFragment;
-import gachon.termproject.jjak.fragment.MatchingTabTeammateFragment;
+import gachon.termproject.jjak.fragment.MatchingTab2Fragment;
+import gachon.termproject.jjak.fragment.MatchingTab1Fragment;
 
 public class MatchingSeePostActivity extends AppCompatActivity {
     private LinearLayout container;
@@ -276,9 +276,9 @@ public class MatchingSeePostActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (state == 1)
-            MatchingTabTeammateFragment.databaseReference.addValueEventListener(MatchingTabTeammateFragment.postEventListener);
+            MatchingTab1Fragment.databaseReference.addValueEventListener(MatchingTab1Fragment.postEventListener);
         else if (state == 0)
-            MatchingTabMeetingFragment.databaseReference.addValueEventListener(MatchingTabMeetingFragment.postEventListener);
+            MatchingTab2Fragment.databaseReference.addValueEventListener(MatchingTab2Fragment.postEventListener);
         finish();
     }
 

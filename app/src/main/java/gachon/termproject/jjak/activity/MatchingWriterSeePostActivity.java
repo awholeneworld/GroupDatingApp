@@ -36,8 +36,8 @@ import gachon.termproject.jjak.Content.RequestContent;
 import gachon.termproject.jjak.FirebaseDeleter;
 import gachon.termproject.jjak.R;
 import gachon.termproject.jjak.adapter.MatchingPostRequestAdapter;
-import gachon.termproject.jjak.fragment.MatchingTabProgressFragment;
-import gachon.termproject.jjak.fragment.MatchingTabTeammateFragment;
+import gachon.termproject.jjak.fragment.MatchingTab3Fragment;
+import gachon.termproject.jjak.fragment.MatchingTab1Fragment;
 
 public class MatchingWriterSeePostActivity extends AppCompatActivity {
     public static int recruited = 0;
@@ -160,9 +160,9 @@ public class MatchingWriterSeePostActivity extends AppCompatActivity {
             case R.id.delete:
                 FirebaseDeleter.postDelete(this, "MeetingPosts", "", postId, images);
                 if (!isRecruited)
-                    MatchingTabTeammateFragment.databaseReference.addValueEventListener(MatchingTabTeammateFragment.postEventListener);
+                    MatchingTab1Fragment.databaseReference.addValueEventListener(MatchingTab1Fragment.postEventListener);
                 else
-                    MatchingTabProgressFragment.databaseReference.addValueEventListener(MatchingTabProgressFragment.postEventListener);
+                    MatchingTab3Fragment.databaseReference.addValueEventListener(MatchingTab3Fragment.postEventListener);
 
                 finish();
                 break;

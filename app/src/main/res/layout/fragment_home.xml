@@ -35,8 +35,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/back" />
+                        android:scaleType="centerCrop" />
 
                     <TextView
                         android:id="@+id/home_relative_1"
@@ -44,8 +43,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="20dp"
                         android:layout_marginTop="10dp"
-                        android:background="@color/gray"
-                        android:text="오늘의 전문가"
+                        android:background="@color/purple_200"
+                        android:text="오늘의 커플"
                         android:textColor="@color/white"
                         android:textSize="20dp" />
 
@@ -56,9 +55,8 @@
                         android:layout_below="@id/home_relative_1"
                         android:layout_marginHorizontal="20dp"
                         android:layout_marginTop="10dp"
-                        android:background="@color/gray"
-                        android:text="홍길동"
-                        android:textColor="@color/white"
+                        android:text="홍길동❤홍길여"
+                        android:textColor="@color/black"
                         android:textSize="17dp" />
 
                 </RelativeLayout>
@@ -76,7 +74,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="자유 커뮤니티"
+                        android:text="자유 게시판"
                         android:textSize="20dp" />
 
                     <androidx.recyclerview.widget.RecyclerView
@@ -103,7 +101,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="조경 팁"
+                        android:text="미팅 팁"
                         android:textSize="20dp" />
 
                     <androidx.recyclerview.widget.RecyclerView
@@ -130,7 +128,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="전문가 후기"
+                        android:text="미팅 후기"
                         android:textSize="20dp" />
 
                     <androidx.recyclerview.widget.RecyclerView
