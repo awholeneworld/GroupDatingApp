@@ -138,7 +138,7 @@
 
     <!--              이 버튼에 신청, 취소, 완료가 들어가는건 java에서 제어합니다.-->
                 <Button
-                    android:id="@+id/matching_expert_button"
+                    android:id="@+id/matching_button"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:text="매칭 요청"

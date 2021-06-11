@@ -103,7 +103,8 @@ public class MatchingSeePostActivity extends AppCompatActivity {
         TextView time = findViewById(R.id.postTime);
         TextView loca = findViewById(R.id.see_post_location_name);
         container = findViewById(R.id.see_post_content);
-        matching_btn = findViewById(R.id.matching_expert_button);
+        matching_btn = findViewById(R.id.matching_button);
+        matching_btn.setVisibility(View.INVISIBLE);
 
         // 이미 매칭 요청 했는지 확인
         databaseReference = FirebaseDatabase.getInstance().getReference("MeetingPosts/" + postId + "/requests");
@@ -117,17 +118,19 @@ public class MatchingSeePostActivity extends AppCompatActivity {
                     RequestContent content = snapshot.getValue(RequestContent.class);
                     if (snapshot.getKey().equals(UserInfo.getUserId())) {
                         matching_btn.setText("취소");
+                        matching_btn.setVisibility(View.VISIBLE);
                         state = 1; //0 - 매칭요청 / 1 - 취소 / 2 - 완료 (가능한 액션)
                         if (content.getIsMatched()) {
                             matching_btn.setText("신청완료");
+                            matching_btn.setVisibility(View.VISIBLE);
                             state = 2;
                         }
                         break;
                     }
                 }
-                if (i == dataSnapshot.getChildrenCount() && i != 1) {
+                if (i == dataSnapshot.getChildrenCount() && state == 0) {
                     matching_btn.setText("참가신청");
-                    state = 0;
+                    matching_btn.setVisibility(View.VISIBLE);
                 }
             }
             @Override
