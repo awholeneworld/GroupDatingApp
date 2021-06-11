@@ -30,7 +30,11 @@ import androidx.appcompat.widget.Toolbar;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.MediaType;
@@ -55,7 +59,6 @@ public class MatchingSeePostActivity extends AppCompatActivity {
     private LinearLayout container;
     private Button matching_btn;
     private RequestContent request;
-    private String category;
     private String postId;
     private String userId;
     private String nickname;
@@ -63,6 +66,7 @@ public class MatchingSeePostActivity extends AppCompatActivity {
     private String intro;
     private String pushToken;
     private ArrayList<String> location;
+    private DatabaseReference databaseReference;
     private int state = 0; //0 - 매칭요청 / 1 - 취소 / 2 - 완료 (가능한 액션)
     Intent intent;
 
@@ -82,7 +86,6 @@ public class MatchingSeePostActivity extends AppCompatActivity {
 
         // 인텐트 데이터 가져오기
         intent = getIntent();
-        category = intent.getStringExtra("category");
         postId = intent.getStringExtra("postId");
         userId = intent.getStringExtra("userId");
         nickname = intent.getStringExtra("nickname");
@@ -103,18 +106,34 @@ public class MatchingSeePostActivity extends AppCompatActivity {
         matching_btn = findViewById(R.id.matching_expert_button);
 
         // 이미 매칭 요청 했는지 확인
-        if (category.equals("awaiting")){
-            matching_btn.setText("취소");
-            state = 1; //0 - 매칭요청 / 1 - 취소 / 2 - 완료 (가능한 액션)
-
-        } else if(category.equals("complete")){
-            matching_btn.setText("신청완료");
-            state = 2;
-        }
-        else{
-            matching_btn.setText("참가신청");
-            state = 0;
-        }
+        databaseReference = FirebaseDatabase.getInstance().getReference("MeetingPosts/" + postId + "/requests");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                int i = 0;
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    i++;
+                    RequestContent content = snapshot.getValue(RequestContent.class);
+                    if (snapshot.getKey().equals(UserInfo.getUserId())) {
+                        matching_btn.setText("취소");
+                        state = 1; //0 - 매칭요청 / 1 - 취소 / 2 - 완료 (가능한 액션)
+                        if (content.getIsMatched()) {
+                            matching_btn.setText("신청완료");
+                            state = 2;
+                        }
+                        break;
+                    }
+                }
+                if (i == dataSnapshot.getChildrenCount() && i != 1) {
+                    matching_btn.setText("참가신청");
+                    state = 0;
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError error) {
+            }
+        });
 
         // 제목, 닉네임, 작성시간 세팅
         titleView.setText(intent.getStringExtra("title"));
@@ -159,7 +178,7 @@ public class MatchingSeePostActivity extends AppCompatActivity {
         matching_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(state == 0){
+                if (state == 0) {
                     //매칭신청
                     AlertDialog.Builder dlg = new AlertDialog.Builder(MatchingSeePostActivity.this);
                     dlg.setTitle("참가 신청"); //제목
@@ -169,7 +188,7 @@ public class MatchingSeePostActivity extends AppCompatActivity {
                             if (request == null)
                                 request = new RequestContent(UserInfo.getNickname(), UserInfo.getProfileImg(), UserInfo.getPushToken(), UserInfo.getIntroduction(), UserInfo.getLocation(), false);
 
-                            FirebaseDatabase.getInstance().getReference("MeetingPosts/" + postId + "/requests/" + UserInfo.getUserId()).setValue(request).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            databaseReference.child(UserInfo.getUserId()).setValue(request).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull @NotNull Task<Void> task) {
                                     sendFCM();
@@ -186,14 +205,14 @@ public class MatchingSeePostActivity extends AppCompatActivity {
                         }
                     });
                     dlg.show();
-                } else if(state == 1) {
+                } else if (state == 1) {
                     //취소
                     AlertDialog.Builder dlg = new AlertDialog.Builder(MatchingSeePostActivity.this);
                     dlg.setTitle("신청 취소"); //제목
                     dlg.setMessage("참가 신청을 취소하시겠습니까?"); // 메시지
-                    dlg.setPositiveButton("신청 취소", new DialogInterface.OnClickListener(){
+                    dlg.setPositiveButton("예", new DialogInterface.OnClickListener(){
                         public void onClick(DialogInterface dialog, int which) {
-                            FirebaseDatabase.getInstance().getReference("MeetingPosts/" + postId + "/requests/" + UserInfo.getUserId()).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                            databaseReference.child(UserInfo.getUserId()).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull @NotNull Task<Void> task) {
                                 }
@@ -203,10 +222,8 @@ public class MatchingSeePostActivity extends AppCompatActivity {
                         }
                     });
 
-                    dlg.setNegativeButton("취소", new DialogInterface.OnClickListener(){
+                    dlg.setNegativeButton("아니요", new DialogInterface.OnClickListener(){
                         public void onClick(DialogInterface dialog, int which) {
-                            matching_btn.setText("취소");
-                            state = 1;
                         }
                     });
                     dlg.show();

@@ -86,7 +86,6 @@ public class SeePostActivity extends AppCompatActivity {
     private String expertName;
     private String intro;
     private String comment;
-    private String expertId;
     private ArrayList<String> content;
     private ArrayList<String> images;
     public ArrayList<String> location;
@@ -145,43 +144,6 @@ public class SeePostActivity extends AppCompatActivity {
         profile.setClipToOutline(true);
         if (!profileImg.equals("None"))
             Glide.with(this).load(profileImg).into(profile);
-
-        TextView expert_name = findViewById(R.id.seepost_review_expertname);
-        View line1 = findViewById(R.id.seepost_review_line1);
-        View line2 = findViewById(R.id.seepost_review_line2);
-        View margin = findViewById(R.id.seepost_formargin);
-
-        //리뷰인경우 전문가 이름 세팅
-        if (category.equals("review")) {
-            expert_name.setVisibility(View.VISIBLE);
-            line1.setVisibility(View.VISIBLE);
-            line2.setVisibility(View.VISIBLE);
-            margin.setVisibility(View.GONE);
-
-            expertId = intent.getStringExtra("expertId");
-
-            DocumentReference documentReference = FirebaseFirestore.getInstance().collection("users").document(expertId);
-
-            documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                    if (task.isSuccessful()) {
-                        DocumentSnapshot document = task.getResult();
-                        if (document.exists()) {
-                            // 사용자 닉네임, 프로필 사진 Url 등 가져오기
-                            expertName = document.getString("nickname");
-                            expert_name.setText("전문가 : " + expertName);
-                        }
-                    }
-                }
-            });
-
-        } else {
-            expert_name.setVisibility(View.GONE);
-            line1.setVisibility(View.GONE);
-            line2.setVisibility(View.GONE);
-            margin.setVisibility(View.VISIBLE);
-        }
 
         // 포스트 내용 넣을 공간 지정
         container = findViewById(R.id.seepost_content);
@@ -346,7 +308,6 @@ public class SeePostActivity extends AppCompatActivity {
                 intent2.putExtra("profileImg", profileImg);
                 intent2.putExtra("intro", intro);
                 intent2.putExtra("pushToken", pushToken);
-                intent2.putExtra("expertId", expertId);
                 intent2.putStringArrayListExtra("location", location);
                 intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent2);

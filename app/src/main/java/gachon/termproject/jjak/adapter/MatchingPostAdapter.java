@@ -63,7 +63,7 @@ public class MatchingPostAdapter extends RecyclerView.Adapter<MatchingPostAdapte
                 public void onClick(View v) {
                     Intent intent;
 
-                    if (UserInfo.getIsMan())
+                    if (userIdInPost.equals(UserInfo.getUserId()))
                         intent = new Intent(context, MatchingWriterSeePostActivity.class);
                     else
                         intent = new Intent(context, MatchingSeePostActivity.class);

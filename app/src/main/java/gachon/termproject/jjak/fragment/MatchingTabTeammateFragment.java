@@ -148,14 +148,12 @@ public class MatchingTabTeammateFragment extends Fragment {
                     postContent = snapshot.getValue(MatchingPostContent.class);
                     postContent.setUserId(snapshot.child("userId").getValue().toString());
                     if (!postContent.getIsRecruited() && postContent.getCategory().equals(category)) { // 아직 게시글은 매칭이 안되었는데
-                        if (!snapshot.child("requests/" + UserInfo.getUserId()).exists()) { // 매칭 대기 목록에 앗 내가 없네 => 그럼 이성 게시물 탭에
-                            if (locationSelected.isEmpty()) // 지역조건 체크
-                                postContentList.add(0, postContent);
-                            else //지역 조건이 존재한다면?
-                                for (String loc : postContent.getLocationSelected())
-                                    if (locationSelected.contains(loc)) //만약 글이 가지고 있는 지역이 선택범위에 있다면
-                                        postContentList.add(0, postContent);
-                        }
+                        if (locationSelected.isEmpty()) // 지역조건 체크
+                            postContentList.add(0, postContent);
+                        else //지역 조건이 존재한다면?
+                            for (String loc : postContent.getLocationSelected())
+                                if (locationSelected.contains(loc)) //만약 글이 가지고 있는 지역이 선택범위에 있다면
+                                    postContentList.add(0, postContent);
                     }
                 }
                 matchingpostAdapter.notifyDataSetChanged();
