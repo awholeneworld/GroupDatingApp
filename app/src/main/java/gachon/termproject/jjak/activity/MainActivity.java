@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                 if (chat != null) fm.beginTransaction().hide(chat).commit();
                 if (myInfo != null) fm.beginTransaction().hide(myInfo).commit();
 
-                action_bar_title.setText("JOKER");
+                action_bar_title.setText("ME4U");
                 actionBar.setDisplayHomeAsUpEnabled(false); //뒤로가기 버튼 없애주깅
                 bottomNavigationView.setSelectedItemId(R.id.home);
                 return true;
@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
                 if (chat != null) fm.beginTransaction().hide(chat).commit();
                 if (myInfo != null) fm.beginTransaction().hide(myInfo).commit();
 
-                action_bar_title.setText("JOKER");
+                action_bar_title.setText("ME4U");
                 actionBar.setDisplayHomeAsUpEnabled(false); //뒤로가기 버튼 없애주깅
 
                 break;

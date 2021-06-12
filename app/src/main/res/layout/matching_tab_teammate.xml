@@ -261,13 +261,14 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/mainGreen"
         android:src="@drawable/ic_baseline_add_24"
+        app:backgroundTint="@color/mainGreen"
         app:fabSize="normal"
-        app:tint="@null"/>
+        app:tint="@null" />
 
 </RelativeLayout>

@@ -44,11 +44,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="3.8dp"
                 android:layout_gravity="left"
+                android:layout_marginLeft="3.8dp"
                 android:text="Email"
-                android:textSize="16dp"
-                android:textColor="@color/mainGreen" />
+                android:textColor="@color/mainGreen"
+                android:textSize="16dp" />
 
             <EditText
                 android:id="@+id/setting_email"
@@ -64,12 +64,12 @@
             <TextView
                 android:layout_width="360dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="3.8dp"
                 android:layout_gravity="left"
+                android:layout_marginLeft="3.8dp"
+                android:layout_marginTop="10dp"
                 android:text="Nickname"
-                android:textSize="16dp"
-                android:textColor="@color/mainGreen" />
+                android:textColor="@color/mainGreen"
+                android:textSize="16dp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -104,19 +104,19 @@
                 android:id="@+id/setting_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="3.8dp"
                 android:layout_gravity="left"
+                android:layout_marginLeft="3.8dp"
+                android:layout_marginTop="8dp"
                 android:text="Location"
-                android:textSize="16dp"
-                android:textColor="@color/mainGreen" />
+                android:textColor="@color/mainGreen"
+                android:textSize="16dp" />
 
             <TextView
                 android:layout_width="360dp"
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
                 android:layout_gravity="center"
-                android:textColor="@color/mainGreen" />
+                android:background="@color/mainGreen" />
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -321,17 +321,17 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
                 android:layout_gravity="center"
-                android:background="@color/mainGreen" />
+                android:background="#509664" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="3.8dp"
                 android:layout_gravity="left"
+                android:layout_marginLeft="3.8dp"
+                android:layout_marginTop="10dp"
                 android:text="Message"
-                android:textSize="16dp"
-                android:textColor="@color/mainGreen" />
+                android:textColor="@color/mainGreen"
+                android:textSize="16dp" />
 
             <EditText
                 android:id="@+id/setting_message"
@@ -349,8 +349,8 @@
                 android:layout_width="360dp"
                 android:layout_height="45dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="8dp"
                 android:layout_marginLeft="5dp"
+                android:layout_marginTop="8dp"
                 android:backgroundTint="#FFFFFF"
                 android:gravity="center"
                 android:text="설정 저장"
@@ -362,8 +362,8 @@
                 android:layout_width="360dp"
                 android:layout_height="45dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="8dp"
                 android:layout_marginLeft="5dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="15dp"
                 android:backgroundTint="#FFFFFF"
                 android:gravity="center"
