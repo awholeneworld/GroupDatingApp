@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!--toolbar-->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:contentInsetStart="0dp"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        app:contentInsetStart="0dp" >
 
         <TextView
             android:id="@+id/opponentNickname"
@@ -54,7 +55,7 @@
     <LinearLayout
         android:id="@+id/messageToSend"
         android:layout_width="380dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="5dp"
@@ -63,17 +64,15 @@
         android:background="@drawable/send_chatting_boarder">
 
         <EditText
-            android:layout_gravity="center_vertical"
             android:id="@+id/messageArea"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:layout_weight="6"
-            android:hint="메시지를 입력해주세요..."
-            android:maxHeight="80dp"
+            android:layout_marginLeft="10dp"
             android:textColor="#000000"
             android:textColorHint="#797979"
-            android:background="@null" />
+            android:hint="메시지를 입력해주세요..."
+            android:maxHeight="80dp" />
 
         <ImageView
             android:id="@+id/sendButton"

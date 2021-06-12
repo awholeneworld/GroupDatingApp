@@ -5,6 +5,12 @@
         android:id="@+id/search"
         android:icon="@drawable/search_grey_72x72"
         android:title="searching"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        />
+
+
+    MenuInflater inflater = getMenuInflater();
+    inflater.inflate(R.menu.top_bell_app_bar, menu);
+    return true;
 
 </menu>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="mainGreen">#509664</color>
+    <color name="mainGreen">#8EC0E4</color>
+    <color name="subColor">#D6ECFA</color>
     <color name="gray">#80000000</color>
     <color name="whitegray">#2A000000</color>
 

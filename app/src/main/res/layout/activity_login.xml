@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- LOGIN START -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="280dp"
@@ -13,23 +16,32 @@
         android:layout_marginTop="15dp"
         tools:ignore="UselessParent">
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/icon3" />
+
         <TextView
             android:id="@+id/login_text01"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
             android:layout_gravity="center"
-            android:text="안녕하세요!\n당신을 위한 조경 커뮤니티,\nJOKER 입니다."
-            android:textSize="24dp"
-            android:textColor="#509664"/>
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+
+            android:text="Meet\n for\n Universal \n혼자하는 소개팅은 그만! \n ME4U!"
+            android:textColor="@color/mainGreen"
+            android:textSize="24dp" />
 
         <TextView
             android:id="@+id/login_text02"
-            android:layout_width="wrap_content"
+            android:layout_width="35dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_gravity="left"
-            android:text="아이디" />
+            android:text="ID" />
 
         <EditText
             android:id="@+id/login_editText_ID"
@@ -37,10 +49,11 @@
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:textSize="18dp"
-            android:hint="이메일을 입력해주세요"
+            android:hint="Enter ID"
             android:inputType="textEmailAddress"
             android:singleLine="true"
-            android:backgroundTint="@color/mainGreen" />
+            android:backgroundTint="@color/mainGreen"
+            />
 
         <TextView
             android:id="@+id/login_text03"
@@ -48,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:layout_gravity="left"
-            android:text="비밀번호" />
+            android:text="Password" />
 
         <EditText
             android:id="@+id/login_editText_PW"
@@ -56,7 +69,7 @@
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:textSize="18dp"
-            android:hint="비밀번호를 입력해주세요"
+            android:hint="Enter Password"
             android:singleLine="true"
             android:inputType="textPassword"
             android:backgroundTint="@color/mainGreen"/>
@@ -78,12 +91,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:text="비밀번호를 잊으셨나요?"
+            android:text="비밀 번호를 잊으셨나요?"
             android:textColor="@color/gray"
             android:textSize="10dp" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center"
@@ -94,21 +107,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="회원가입을 안하셨나요?"
+                android:text="저희 회원이 아니신가요?"
                 android:textSize="11dp"
                 android:textColor="#4D4D4D" />
 
             <TextView
                 android:id="@+id/login_text06_signup"
-                android:layout_width="60dp"
+                android:layout_width="79dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="회원가입"
-                android:textSize="11dp"
-                android:textColor="@color/gray" />
+                android:text="회원가입 하기"
+                android:textColor="@color/gray"
+                android:textSize="11dp" />
 
         </LinearLayout>
-
     </LinearLayout>
-
 </LinearLayout>

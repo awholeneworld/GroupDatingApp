@@ -45,7 +45,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="#3CAF5C"
+        android:backgroundTint="@color/mainGreen"
         android:src="@drawable/ic_baseline_add_24"
         app:fabSize="normal"
         app:tint="@null"/>
