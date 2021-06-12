@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="gachon.termproject.jjak">
+    package="gachon.termproject.me4u">
     <!-- 카메라, 외부 저장소 접근 권한 -> 나중에 유저에게 허락 요청하는걸로 바꾸기-->
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -14,15 +14,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Joker">
-        <activity android:name="gachon.termproject.jjak.activity.SeeProfileActivity"></activity>
+        <activity android:name="gachon.termproject.me4u.activity.SeeProfileActivity"></activity>
         <activity
-            android:name="gachon.termproject.jjak.activity.CommunitySearchActivity"
+            android:name="gachon.termproject.me4u.activity.CommunitySearchActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="gachon.termproject.jjak.activity.SettingActivity"
+            android:name="gachon.termproject.me4u.activity.SettingActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="gachon.termproject.jjak.activity.SplashActivity"
+            android:name="gachon.termproject.me4u.activity.SplashActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -32,84 +32,84 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="gachon.termproject.jjak.activity.LoginActivity"
+            android:name="gachon.termproject.me4u.activity.LoginActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="gachon.termproject.jjak.activity.Signup00Activity"
+            android:name="gachon.termproject.me4u.activity.Signup00Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="gachon.termproject.jjak.activity.Signup01Activity"
+            android:name="gachon.termproject.me4u.activity.Signup01Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="gachon.termproject.jjak.activity.Signup02Activity"
+            android:name="gachon.termproject.me4u.activity.Signup02Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="gachon.termproject.jjak.activity.Signup03Activity"
+            android:name="gachon.termproject.me4u.activity.Signup03Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="gachon.termproject.jjak.activity.Signup04Activity"
+            android:name="gachon.termproject.me4u.activity.Signup04Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="gachon.termproject.jjak.activity.Signup05Activity"
+            android:name="gachon.termproject.me4u.activity.Signup05Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="gachon.termproject.jjak.activity.MainActivity"
+            android:name="gachon.termproject.me4u.activity.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="gachon.termproject.jjak.activity.WritePostActivity"
+            android:name="gachon.termproject.me4u.activity.WritePostActivity"
             android:configChanges="screenSize|orientation"
             android:screenOrientation="portrait">
 
             <!-- ^화면 회전 시 상태 및 데이터 초기화 방지^ -->
         </activity>
         <activity
-            android:name="gachon.termproject.jjak.activity.SeePostActivity"
+            android:name="gachon.termproject.me4u.activity.SeePostActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="gachon.termproject.jjak.activity.ChatActivity"
+            android:name="gachon.termproject.me4u.activity.ChatActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="gachon.termproject.jjak.activity.FindPasswordActivity"
+            android:name="gachon.termproject.me4u.activity.FindPasswordActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="gachon.termproject.jjak.activity.SettingMyInfoActivity"
+            android:name="gachon.termproject.me4u.activity.SettingMyInfoActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="gachon.termproject.jjak.activity.ChangePasswordActivity"
+            android:name="gachon.termproject.me4u.activity.ChangePasswordActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="gachon.termproject.jjak.activity.CheckPasswordActivity"
+            android:name="gachon.termproject.me4u.activity.CheckPasswordActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="gachon.termproject.jjak.activity.SettingBellActivity"
+            android:name="gachon.termproject.me4u.activity.SettingBellActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="gachon.termproject.jjak.activity.MatchingWriterSeePostActivity"
+            android:name="gachon.termproject.me4u.activity.MatchingWriterSeePostActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="gachon.termproject.jjak.activity.MatchingSeePostActivity"
+            android:name="gachon.termproject.me4u.activity.MatchingSeePostActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="gachon.termproject.jjak.activity.MatchingWritePostActivity"
+            android:name="gachon.termproject.me4u.activity.MatchingWritePostActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="gachon.termproject.jjak.activity.FullScreenImageActivity"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name="gachon.termproject.jjak.activity.MatchingSearchActivity"
+            android:name="gachon.termproject.me4u.activity.FullScreenImageActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="gachon.termproject.jjak.activity.SearchPeopleActivity"
+            android:name="gachon.termproject.me4u.activity.MatchingSearchActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="gachon.termproject.jjak.fragment.MatchingSearchFragment"
+            android:name="gachon.termproject.me4u.activity.SearchPeopleActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="gachon.termproject.me4u.fragment.MatchingSearchFragment"
             android:screenOrientation="portrait" />
 
         <service
-            android:name="gachon.termproject.jjak.MyFirebaseMessagingService"
+            android:name="gachon.termproject.me4u.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
